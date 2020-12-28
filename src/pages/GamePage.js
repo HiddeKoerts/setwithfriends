@@ -410,7 +410,9 @@ function GamePage({ match }) {
               scores={scores}
               leaderboard={leaderboard}
             />
-            <Button onClick={handleAddHint}>Add hint: {numHints}</Button>
+            {game.mode === "normal" && game.enableHint && (
+              <Button onClick={handleAddHint}>Add hint: {numHints}</Button>
+            )}
           </Grid>
         </Box>
       </Grid>
